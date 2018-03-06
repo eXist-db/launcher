@@ -1,0 +1,60 @@
+<dom-module id="existdb-launcher">
+    <template>
+        <style>
+            :host {
+                display: block;
+            }
+        </style>
+        <iron-ajax id="loadApplications"
+                   with-credentials
+                   method="get"
+                   handle-as="json"
+                   on-response="_displayApplications"
+                   on-error="_handleError"></iron-ajax>
+
+    </template>
+
+    <script>
+        /**
+         * `existdb-launcher`
+         * Element displaying app icons and allowing them to start
+         *
+         * @customElement
+         * @polymer
+         * @demo demo/index.html
+         */
+        class ExistdbLauncher extends Polymer.Element {
+
+            static get is() {
+                return 'existdb-launcher';
+            }
+
+            static get properties() {
+                return {};
+            }
+
+            connectedCallback() {
+                super.connectedCallback();
+                console.log('ExistdbLauncher connected');
+                console.log('ExistdbLauncher connected rootPath ', this.rootPath);
+                console.log('ExistdbLauncher connected importPath ', this.importPath);
+
+                this.$.loadApplications.url =  '../packageservice/packages/apps';
+                this.$.loadApplications.generateRequest();
+
+            }
+
+            _displayApplications(){
+
+            }
+
+            _handleError(){
+
+            }
+
+
+        }
+
+        window.customElements.define(ExistdbLauncher.is, ExistdbLauncher);
+    </script>
+</dom-module>

@@ -1,0 +1,44 @@
+<dom-module id="existdb-launcher-app">
+    <template>
+        <style include="existdb-styles">
+        </style>
+        <app-header-layout id="outer" fullbleed has-scrolling-region>
+            <app-header slot="header" fixed>
+                <app-toolbar>
+                    <div main-title>Launcher</div>
+                    <a class="logout" href="index.html?logout=true">logout</a>
+                </app-toolbar>
+            </app-header>
+            <h1>foobar</h1>
+            <!--<existdb-launcher></existdb-launcher>-->
+        </app-header-layout>
+    </template>
+
+    <script>
+        /**
+         * `existdb-launcher-app`
+         * an app wrapper for existdb-launcher
+         *
+         * @customElement
+         * @polymer
+         * @demo demo/index.html
+         */
+        class ExistdbLauncherApp extends Polymer.Element {
+            static get is() {
+                return 'existdb-launcher-app';
+            }
+
+            static get properties() {
+                return {};
+            }
+
+            connectedCallback() {
+                super.connectedCallback();
+                console.log('ExistdbLauncherApp connected');
+            }
+
+        }
+
+        window.customElements.define(ExistdbLauncherApp.is, ExistdbLauncherApp);
+    </script>
+</dom-module>

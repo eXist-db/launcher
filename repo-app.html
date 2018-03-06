@@ -1,0 +1,97 @@
+<!--
+`repo-app`
+element for displaying package metadata
+
+@demo demo/doc.html
+-->
+
+<dom-module id="repo-app">
+    <template>
+        <style>
+            :host {
+            }
+        </style>
+        <slot name="icon"></slot>
+        <div id="wrapper" class="wrapper" url="[[url]]">
+            <slot></slot>
+        </div>
+    </template>
+
+    <script>
+        class RepoApp extends Polymer.Element {
+
+            static get is() {
+                return 'repo-app';
+            }
+
+            static get properties() {
+                return {
+                    type: {
+                        type: String,
+                        reflectToAttribute: true
+                    },
+                    path: {
+                        type: String,
+                        reflectToAttribute: true
+                    },
+                    status: {
+                        type: String,
+                        reflectToAttribute: true,
+                        notify: true
+                    }
+
+                };
+            }
+
+            constructor() {
+//                console.log('constructor RepoApp')
+                super();
+            }
+
+
+            handleInfo (e) {
+                e.stopPropagation()
+                e.preventDefault()
+               var detail = this.querySelector('table');
+                if(detail.hasAttribute("class")){
+                   detail.removeAttribute("class")
+                }else{
+                    detail.setAttribute("class","hidden")
+                }
+
+            }
+
+            connectedCallback() {
+                super.connectedCallback();
+
+                this.addEventListener('click',this._handleTap);
+            }
+
+            ready () {
+                super.ready();
+            }
+
+            _handleTap (e) {
+                console.log('handleTap ', e);
+//                console.log('handleTap ', e.composedPath());
+                e.stopPropagation();
+
+//                var t = e.composedPath()[0];
+//                console.log('_handleTap ', t);
+
+                var isApp = this.type == 'application';
+
+                if(isApp && this.status == "installed"){
+                    var targetUrl = this.path;
+                    window.open(targetUrl)
+                }
+            }
+
+
+
+
+        }
+        window.customElements.define(RepoApp.is, RepoApp);
+
+    </script>
+</dom-module>

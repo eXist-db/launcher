@@ -1,0 +1,126 @@
+<dom-module id="existdb-launcher">
+    <template>
+        <style>
+            :host {
+                display: block;
+            }
+
+            repo-packages{
+                display:flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+            repo-app{
+                display:table;
+                width:250px;
+                height:150px;
+                position: relative;
+                /*border:thin solid;*/
+                margin:10px;
+                padding:10px;
+            }
+            repo-title{
+                font-size:16px;
+                display:block;
+                position: absolute;
+                bottom:0;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                height:36px;
+                /*background: yellow;*/
+            }
+            repo-icon{
+                width: 100%;
+                height: 100%;
+                vertical-align: middle;
+                display: table-cell;
+            }
+
+            repo-name,
+            repo-version,
+            repo-type,
+            repo-authors,
+            repo-abbrev,
+            repo-description,
+            repo-website,
+            repo-url,
+            repo-license {
+                display:none;
+            }
+        </style>
+        <iron-ajax id="loadApplications"
+                   method="get"
+                   handle-as="text"
+                   on-response="_displayApplications"
+                   url="../packageservice/packages/apps"
+                   on-error="_handleError" auto>
+        </iron-ajax>
+
+        <div id="apps">
+            <slot></slot>
+        </div>
+
+    </template>
+
+    <script>
+        /**
+         * `existdb-launcher`
+         * Element displaying app icons and allowing them to start
+         *
+         * @customElement
+         * @polymer
+         * @demo demo/index.html
+         */
+        class ExistdbLauncher extends Polymer.Element {
+
+            static get is() {
+                return 'existdb-launcher';
+            }
+
+            static get properties() {
+                return {};
+            }
+
+            connectedCallback() {
+                super.connectedCallback();
+                console.log('ExistdbLauncher connected');
+                console.log('ExistdbLauncher connected rootPath ', this.rootPath);
+                console.log('ExistdbLauncher connected importPath ', this.importPath);
+
+//                this.$.loadApplications.url =  '../packageservice/packages/apps';
+                this.$.loadApplications.generateRequest();
+
+            }
+
+            ready(){
+                super.ready();
+
+//                window.addEventListener('click', function(e){
+//                    console.log("fired ", e);
+//                });
+
+            }
+
+
+            _displayApplications(e){
+                this.$.apps.innerHTML = this.$.loadApplications.lastResponse;
+
+            }
+
+            _onClick(e){
+                console.log("clicked ", e);
+                console.log("clicked target", e.target);
+            }
+
+            _handleError(){
+
+            }
+
+
+        }
+
+        window.customElements.define(ExistdbLauncher.is, ExistdbLauncher);
+    </script>
+</dom-module>
