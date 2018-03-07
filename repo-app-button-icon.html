@@ -5,7 +5,7 @@ element for displaying package metadata
 @demo demo/doc.html
 -->
 
-<dom-module id="repo-icon">
+<dom-module id="repo-app-button-icon">
     <template>
         <style>
             :host {
@@ -24,10 +24,10 @@ element for displaying package metadata
     </template>
 
     <script>
-        class RepoIcon extends Polymer.Element{
+        class RepoAppButtonIcon extends Polymer.Element{
 
             static get is() {
-                return 'repo-icon';
+                return 'repo-app-button-icon';
             }
 
             static get properties() {
@@ -58,7 +58,7 @@ element for displaying package metadata
 
 
         }
-        window.customElements.define(RepoIcon.is, RepoIcon);
+        window.customElements.define(RepoAppButtonIcon.is, RepoAppButtonIcon);
 
     </script>
 </dom-module>

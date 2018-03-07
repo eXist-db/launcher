@@ -5,7 +5,7 @@ element for displaying package metadata
 @demo demo/doc.html
 -->
 
-<dom-module id="repo-app">
+<dom-module id="repo-app-button">
     <template>
         <style>
             :host {
@@ -24,10 +24,10 @@ element for displaying package metadata
     </template>
 
     <script>
-        class RepoApp extends Polymer.Element {
+        class RepoAppButton extends Polymer.Element {
 
             static get is() {
-                return 'repo-app';
+                return 'repo-app-button';
             }
 
             static get properties() {
@@ -50,7 +50,7 @@ element for displaying package metadata
             }
 
             constructor() {
-//                console.log('constructor RepoApp')
+//                console.log('constructor RepoAppButton')
                 super();
             }
 
@@ -92,7 +92,7 @@ element for displaying package metadata
             _handleEnter(e) {
                 var originalTarget = e.composedPath()[0];
 
-                if (e.target.nodeName.toLowerCase() == "repo-app" && e.keyCode == 13) {
+                if (e.target.nodeName.toLowerCase() == "repo-app-button" && e.keyCode == 13) {
                     this._openApp()
                 }
             }
@@ -110,7 +110,7 @@ element for displaying package metadata
 
 
         }
-        window.customElements.define(RepoApp.is, RepoApp);
+        window.customElements.define(RepoAppButton.is, RepoAppButton);
 
     </script>
 </dom-module>

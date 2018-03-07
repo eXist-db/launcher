@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d83a26a-aebb-4a99-bbee-c469ad4272c0" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/repo-app.html" afterPath="$PROJECT_DIR$/repo-app-button.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/repo-icon.html" afterPath="$PROJECT_DIR$/repo-app-button-icon.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dependencies-local.html" afterPath="$PROJECT_DIR$/dependencies-local.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dependencies.html" afterPath="$PROJECT_DIR$/dependencies.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -26,11 +28,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="repo-app.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/repo-app.html">
+      <file leaf-file-name="repo-app-button.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/repo-app-button.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1683">
-              <caret line="99" column="21" lean-forward="false" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="21" />
+            <state relative-caret-position="476">
+              <caret line="28" column="29" lean-forward="true" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="repo-app-button-icon.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/repo-app-button-icon.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -76,31 +88,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dependencies.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dependencies.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dependencies.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="527">
+              <caret line="31" column="42" lean-forward="false" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bower.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bower.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bower.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
               <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="existdb-usermanager.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../usermanager/existdb-usermanager.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13056">
-              <caret line="768" column="66" lean-forward="false" selection-start-line="768" selection-start-column="66" selection-end-line="768" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -125,9 +127,15 @@
       <find>querySelectorAll</find>
       <find>targetConfiguration</find>
       <find>bower_components</find>
+      <find>RepoApp</find>
+      <find>RepoIcon</find>
     </findStrings>
     <replaceStrings>
       <replace>..</replace>
+      <replace>repo-app-button</replace>
+      <replace>RepoAppButton</replace>
+      <replace>repo-app-button-icon</replace>
+      <replace>RepoAppButtonIcon</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -158,6 +166,8 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/dependencies.html" />
         <option value="$PROJECT_DIR$/bower.json" />
+        <option value="$PROJECT_DIR$/repo-app-button.html" />
+        <option value="$PROJECT_DIR$/repo-app-button-icon.html" />
       </list>
     </option>
   </component>
@@ -338,7 +348,7 @@
       <workItem from="1520371519502" duration="3874000" />
       <workItem from="1520419949342" duration="3781000" />
       <workItem from="1520424224196" duration="8765000" />
-      <workItem from="1520434613920" duration="125000" />
+      <workItem from="1520434613920" duration="579000" />
     </task>
     <task id="LOCAL-00001" summary="styling; event to trigger opening of apps">
       <created>1520421828455</created>
@@ -361,11 +371,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520434293168</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fixed bower syntax error">
+      <created>1520434756029</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1520434756029</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43371000" />
+    <option name="totallyTimeSpent" value="43825000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2580" y="-517" width="1720" height="1413" extended-state="0" />
@@ -413,7 +430,8 @@
     <MESSAGE value="styling; event to trigger opening of apps" />
     <MESSAGE value="passing basePath and ignores attributes for configuration;" />
     <MESSAGE value="bower ignores + dependencies added" />
-    <option name="LAST_COMMIT_MESSAGE" value="bower ignores + dependencies added" />
+    <MESSAGE value="fixed bower syntax error" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed bower syntax error" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -465,10 +483,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/repo-icon.html">
+    <entry file="file://$PROJECT_DIR$/repo-app-button-icon.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -506,6 +525,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="42" lean-forward="false" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -577,6 +597,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
           <caret line="38" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -639,13 +660,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
           <caret line="43" column="69" lean-forward="false" selection-start-line="43" selection-start-column="69" selection-end-line="43" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/repo-icon.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="25" lean-forward="false" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -727,6 +741,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="833">
           <caret line="49" column="13" lean-forward="false" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -762,26 +777,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dependencies-local.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/expath-pkg.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/repo-app.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1683">
-          <caret line="99" column="21" lean-forward="false" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -794,18 +793,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dependencies.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bower.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/repo-app-button.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="29" lean-forward="true" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/repo-app-button-icon.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dependencies-local.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dependencies.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="42" lean-forward="false" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
           <folding />
         </state>
       </provider>
