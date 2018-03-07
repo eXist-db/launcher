@@ -9,8 +9,14 @@ element for displaying package metadata
     <template>
         <style>
             :host {
+                display: block;
+            }
+            ::slotted(repo-title){
+                font-size:14px;
             }
         </style>
+
+        <paper-ripple></paper-ripple>
         <slot name="icon"></slot>
         <div id="wrapper" class="wrapper" url="[[url]]">
             <slot></slot>
@@ -63,31 +69,44 @@ element for displaying package metadata
 
             connectedCallback() {
                 super.connectedCallback();
-
-                this.addEventListener('click',this._handleTap);
+                this.addEventListener('click',this._openApp);
+                this.addEventListener('keyup',this._handleEnter);
+                this.setAttribute('tabindex','0');
             }
 
             ready () {
                 super.ready();
+
             }
 
             _handleTap (e) {
-                console.log('handleTap ', e);
-//                console.log('handleTap ', e.composedPath());
+//                console.log('handleTap ', e);
                 e.stopPropagation();
 
 //                var t = e.composedPath()[0];
 //                console.log('_handleTap ', t);
-
-                var isApp = this.type == 'application';
-
-                if(isApp && this.status == "installed"){
-                    var targetUrl = this.path;
-                    window.open(targetUrl)
-                }
+                this._openApp();
             }
 
 
+            _handleEnter(e) {
+                var originalTarget = e.composedPath()[0];
+
+                if (e.target.nodeName.toLowerCase() == "repo-app" && e.keyCode == 13) {
+                    this._openApp()
+                }
+            }
+
+            _openApp(){
+                var isApp = this.type == 'application';
+                if(isApp && this.status == "installed"){
+                    var targetUrl = this.path;
+                    setTimeout(function(){
+                        window.open(targetUrl);
+                    },300);
+
+                }
+            }
 
 
         }

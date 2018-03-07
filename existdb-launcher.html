@@ -3,6 +3,13 @@
         <style>
             :host {
                 display: block;
+                position:relative;
+            }
+
+            :focus{
+                box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+                0 1px 5px 0 rgba(0, 0, 0, 0.12),
+                0 3px 1px -2px rgba(0, 0, 0, 0.2);
             }
 
             repo-packages{
@@ -13,7 +20,7 @@
             }
             repo-app{
                 display:table;
-                width:250px;
+                width:150px;
                 height:150px;
                 position: relative;
                 /*border:thin solid;*/
@@ -21,21 +28,23 @@
                 padding:10px;
             }
             repo-title{
-                font-size:16px;
+                font-size:12px;
                 display:block;
                 position: absolute;
-                bottom:0;
-                left: 0;
-                width: 100%;
+                bottom:16px;
+                left: 15px;
+                width: 140px;
                 text-align: center;
                 height:36px;
                 /*background: yellow;*/
+                text-shadow: -1px 1px 1px rgba(108,98,98,0.2);
             }
             repo-icon{
                 width: 100%;
                 height: 100%;
                 vertical-align: middle;
                 display: table-cell;
+                background: transparent;
             }
 
             repo-name,
@@ -49,6 +58,7 @@
             repo-license {
                 display:none;
             }
+
         </style>
         <iron-ajax id="loadApplications"
                    method="get"
@@ -57,6 +67,7 @@
                    url="../packageservice/packages/apps"
                    on-error="_handleError" auto>
         </iron-ajax>
+
 
         <div id="apps">
             <slot></slot>
@@ -91,7 +102,7 @@
 
 //                this.$.loadApplications.url =  '../packageservice/packages/apps';
                 this.$.loadApplications.generateRequest();
-
+                this.focus();
             }
 
             ready(){
@@ -106,6 +117,9 @@
 
             _displayApplications(e){
                 this.$.apps.innerHTML = this.$.loadApplications.lastResponse;
+//                var first = this.querySelectorAll('repo-app')[0];
+//                first.focus();
+
 
             }
 
