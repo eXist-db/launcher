@@ -12,7 +12,7 @@
                 </app-toolbar>
             </app-header>
             <!--<h1>foobar</h1>-->
-            <existdb-launcher></existdb-launcher>
+            <existdb-launcher path="[[path]]" ignores='{{ignores}}'></existdb-launcher>
         </app-header-layout>
     </template>
 
@@ -31,12 +31,27 @@
             }
 
             static get properties() {
-                return {};
+                return {
+                    ignores:{
+                        type: Array,
+                        reflectToAttribute:true
+                    },
+                    path:{
+                        type: String,
+                        reflectToAttribute: true
+                    }
+                };
             }
 
             connectedCallback() {
                 super.connectedCallback();
                 console.log('ExistdbLauncherApp connected');
+
+            }
+
+            ready(){
+                super.ready();
+//                console.log('ExistdbLauncherApp connected ignores', this.ignores);
             }
 
         }

@@ -14,7 +14,8 @@ var PRODUCTION = (!!process.env.NODE_ENV || process.env.NODE_ENV === 'production
 console.log('Production? %s', PRODUCTION)
 
 exist.defineMimeTypes({
-    'application/xml': ['odd']
+    'application/xml': ['odd'],
+    'text/html': ['html']
 })
 
 var exClient = exist.createClient({
@@ -90,7 +91,8 @@ var otherPaths = [
     'transforms/**/*',
     'resources/**/*',
     '!resources/css/*',
-    'modules/**/*'
+    'modules/**/*',
+    'demo/**/*'
 ];
 
 gulp.task('deploy:other', function () {
