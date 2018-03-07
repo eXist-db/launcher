@@ -18,5 +18,20 @@
   },
   "resolutions": {
     "polymer": "^2.0.0"
-  }
+  },
+  ,
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "build",
+    "node_modules",
+    "build.xml",
+    "expath-pkg.xml",
+    "dependencies-local.html",
+    "gulpfile.js",
+    "package.json",
+    "polymer.json",
+    "repo.xml"
+  ],
+  "private":true
 }
