@@ -2,16 +2,16 @@
     <template>
         <style include="existdb-styles">
             :host{
-                background: transparent;
+                background: ghostwhite;
             }
         </style>
         <app-header-layout id="outer" fullbleed has-scrolling-region>
             <app-header slot="header" fixed>
                 <app-toolbar>
+                    <img src="resources/icon.svg" style="width:36px;height:36px;padding-right:6px;">
                     <div main-title>Launcher</div>
                 </app-toolbar>
             </app-header>
-            <!--<h1>foobar</h1>-->
             <existdb-launcher path="[[path]]" ignores='{{ignores}}'></existdb-launcher>
         </app-header-layout>
     </template>

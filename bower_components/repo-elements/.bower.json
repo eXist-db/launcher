@@ -1,0 +1,25 @@
+{
+  "name": "foo-bar",
+  "main": "foo-bar.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^2.0.0"
+  },
+  "resolutions": {
+    "polymer": "^2.0.0"
+  },
+  "ignore": [
+    "**/.*",
+    "git",
+    ".git",
+    ".idea"
+  ],
+  "private": true,
+  "_cacheHeaders": {
+    "Content-Type": "application/octet-stream",
+    "Content-Disposition": "attachment; filename=\"repo-elements-master-4e049a51c44b94f7d1b655e9a53abfb8be1e2e60.tar.gz\""
+  },
+  "_source": "https://gitlab.existsolutions.com/eXistdbElements/repo-elements/repository/master/archive.tar.gz",
+  "_target": "*",
+  "_originalSource": "https://gitlab.existsolutions.com/eXistdbElements/repo-elements/repository/master/archive.tar.gz",
+  "_direct": true
+}

@@ -36,7 +36,10 @@
     <target name="polymer-build-production" depends="clean-polymer-build">
         <exec executable="polymer">
             <arg value="build"/>
-            <arg value="--shell"/>
+            <arg value="--bundle"/>
+            <arg value="--sources"/>
+            <arg value="*.html"/>
+            <arg value="--entrypoint"/>
             <arg value="index.html"/>
         </exec>
     </target>
@@ -52,7 +55,7 @@
         <copy file="expath-pkg.xml" todir="${build.dir}/bundled"/>
         <copy file="configuration.xml" todir="${build.dir}/bundled"/>
         <copy file="repo.xml" todir="${build.dir}/bundled"/>
-        <copy file="icon.png" todir="${build.dir}/bundled"/>
+        <copy file="icon.svg" todir="${build.dir}/bundled"/>
         <copydir src="${basedir}/modules" dest="${build.dir}/bundled/modules" />
         <copydir src="${basedir}/resources" dest="${build.dir}/bundled/resources" />
 

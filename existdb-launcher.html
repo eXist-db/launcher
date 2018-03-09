@@ -4,6 +4,7 @@
             :host {
                 display: block;
                 position:relative;
+                background:ghostwhite;
             }
 
             :focus{
@@ -14,34 +15,40 @@
                 outline:0;
             }
 
-            repo-packages{
+            [launcher] repo-packages{
                 display:flex;
                 flex-direction: row;
                 flex-wrap: wrap;
                 align-items: center;
             }
-            repo-app{
-                display:table;
+
+            [launcher] repo-app{
                 width:150px;
                 height:150px;
-                position: relative;
-                /*border:thin solid;*/
+                position:relative;
+                /*border: thin solid;*/
                 margin:10px;
-                padding:10px;
+                /*
+                                padding:10px;
+                */
+/*
+                display:table;
+*/
             }
-            repo-title{
+            [launcher] repo-title{
                 font-size:12px;
                 display:block;
                 position: absolute;
-                bottom:16px;
-                left: 15px;
-                width: 140px;
+                bottom:4px;
+                /*left: 15px;*/
+                left: 0px;
+                width: 100%;
                 text-align: center;
                 height:36px;
                 /*background: yellow;*/
-                text-shadow: -1px 1px 1px rgba(108,98,98,0.2);
+                text-shadow: -2px 2px 2px rgba(108,98,98,0.3);
             }
-            repo-icon{
+            [launcher] repo-icon{
                 width: 100%;
                 height: 100%;
                 vertical-align: middle;
@@ -49,15 +56,15 @@
                 background: transparent;
             }
 
-            repo-name,
-            repo-version,
-            repo-type,
-            repo-authors,
-            repo-abbrev,
-            repo-description,
-            repo-website,
-            repo-url,
-            repo-license {
+            [launcher] repo-name,
+            [launcher] repo-version,
+            [launcher] repo-type,
+            [launcher] repo-authors,
+            [launcher] repo-abbrev,
+            [launcher] repo-description,
+            [launcher] repo-website,
+            [launcher] repo-url,
+            [launcher] repo-license {
                 display:none;
             }
 
@@ -71,7 +78,7 @@
         </iron-ajax>
 
 
-        <div id="apps">
+        <div id="apps" launcher>
             <slot></slot>
         </div>
 
@@ -113,13 +120,20 @@
 //                console.log('ExistdbLauncher connected rootPath ', this.rootPath);
 //                console.log('ExistdbLauncher connected path ', this.path);
 //                console.log('ExistdbLauncher connected importPath ', this.importPath);
-                this.basePath = this.rootPath.substring(0,this.rootPath.indexOf(this.path));
-//                console.log("ExistdbLauncher basepath: ",this.basePath);
+//                this.basePath = this.rootPath.substring(0,this.rootPath.indexOf(this.path));
 //                console.log("ExistdbLauncher ignores: ",this.ignores);
+                if(this.path == undefined){
+                    this.basePath = '..';
+                }else{
+                    this.basePath = this.rootPath.substring(0,this.rootPath.indexOf(this.path));
+                }
+                console.log("ExistdbLauncher basepath: ",this.basePath);
 
 //                this.$.loadApplications.url =  '../packageservice/packages/apps';
                 this.$.loadApplications.generateRequest();
                 this.focus();
+
+                console.log("meta env: ", document.getElementById('meta').byKey('env'))
             }
 
             ready(){
