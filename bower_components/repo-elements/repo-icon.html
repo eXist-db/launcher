@@ -17,7 +17,7 @@ element for displaying package metadata
                 width: 64px;
             }
         </style>
-        <img src="{{src}}" on-click="_openApp">
+        <img id="img" on-click="_openApp">
         <slot></slot>
     </template>
 
@@ -36,6 +36,11 @@ element for displaying package metadata
                         notify:true
                     }
                 };
+            }
+
+            connectedCallback() {
+                super.connectedCallback();
+                this.$.img.src=this.src;
             }
 
 

@@ -1,6 +1,6 @@
 {
-  "name": "foo-bar",
-  "main": "foo-bar.html",
+  "name": "repo-elements",
+  "main": "repo-app.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0"
   },
@@ -15,11 +15,13 @@
   ],
   "private": true,
   "_cacheHeaders": {
-    "Content-Type": "application/octet-stream",
-    "Content-Disposition": "attachment; filename=\"repo-elements-master-4e049a51c44b94f7d1b655e9a53abfb8be1e2e60.tar.gz\""
+    "ETag": "\"014c8aea3306e13fdce77184c03540f8cf655fa3\"",
+    "Content-Type": "application/zip",
+    "Content-Disposition": "attachment; filename=repo-elements-master.zip"
   },
-  "_source": "https://gitlab.existsolutions.com/eXistdbElements/repo-elements/repository/master/archive.tar.gz",
+  "_release": "e-tag:014c8aea3",
+  "_source": "https://github.com/eXist-db/repo-elements/archive/master.zip",
   "_target": "*",
-  "_originalSource": "https://gitlab.existsolutions.com/eXistdbElements/repo-elements/repository/master/archive.tar.gz",
+  "_originalSource": "https://github.com/eXist-db/repo-elements/archive/master.zip",
   "_direct": true
 }

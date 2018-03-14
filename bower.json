@@ -13,7 +13,7 @@
     "iron-meta": "PolymerElements/iron-meta#^2.0.0",
     "bower": "*",
     "install": "^1.0.4",
-    "repo-elements": "https://gitlab.existsolutions.com/eXistdbElements/repo-elements/repository/master/archive.tar.gz"
+    "repo-elements": "https://github.com/eXist-db/repo-elements/archive/master.zip"
   },
   "devDependencies": {
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0",

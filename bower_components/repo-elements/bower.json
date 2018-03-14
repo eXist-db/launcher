@@ -1,6 +1,6 @@
 {
-  "name": "foo-bar",
-  "main": "foo-bar.html",
+  "name": "repo-elements",
+  "main": "repo-app.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0"
   },

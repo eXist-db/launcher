@@ -3,7 +3,20 @@
         <style include="existdb-styles">
             :host{
                 background: ghostwhite;
+                /*background: url(resources/pattern.svg);*/
             }
+
+/*
+            .logo{
+                position:absolute;
+                z-index:25;
+                top:6px;
+                right:6px;
+                width:100px;
+                background: ghostwhite;
+            }
+*/
+
         </style>
         <app-header-layout id="outer" fullbleed has-scrolling-region>
             <app-header slot="header" fixed>
@@ -14,6 +27,7 @@
             </app-header>
             <existdb-launcher path="[[path]]" ignores='{{ignores}}'></existdb-launcher>
         </app-header-layout>
+        <!--<img src="resources/powered-by.svg" class="logo">-->
     </template>
 
     <script>
