@@ -10,7 +10,7 @@ Launcher can be used as a standalone application or embedded as a Web Component 
 
 creates an unoptimized xar file for deploying into eXist-db.
 
-``ant production-xar``` 
+```ant production-xar``` 
 
 creates a compressed version.`
 
