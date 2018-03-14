@@ -52,7 +52,7 @@
         <copy file="expath-pkg.xml" todir="${polymer.build.dir}"/>
         <!--<copy file="configuration.xml" todir="${build.dir}/bundled"/>-->
         <copy file="repo.xml" todir="${polymer.build.dir}"/>
-        <copy file="icon.png" todir="${polymer.build.dir}"/>
+        <copy file="icon.svg" todir="${polymer.build.dir}"/>
         <copydir src="${basedir}/modules" dest="${polymer.build.dir}/modules" />
         <copydir src="${basedir}/resources" dest="${polymer.build.dir}/resources" />
 
