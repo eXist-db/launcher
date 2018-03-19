@@ -7,6 +7,10 @@ need to display an app item in a different way with different functionality.
 This meta-element uses condidtional templates to create the appropriate element that is used in the different contexts.
 The attributes coming with an 'repo-app' element are passed down to the respective view element.
 
+Important note: repo-app looks upward in the tree to the parent of the parent. The immediate parent will always be
+'repo-packages' element. If the parent of 'repo-packages' has type='launcher' or type='packagemanager' it will
+instanciate the appropriate template.#
+
 @demo demo/doc.html
 -->
 
@@ -104,12 +108,12 @@ The attributes coming with an 'repo-app' element are passed down to the respecti
                         reflectToAttribute: true,
                         notify: true
                     },
-/*
-                    showAll: {
-                        type: Boolean,
-                        reflectToAttribute: true
-                    },
-*/
+                    /*
+                                        showAll: {
+                                            type: Boolean,
+                                            reflectToAttribute: true
+                                        },
+                    */
                     path: {
                         type: String,
                         reflectToAttribute: true
@@ -123,15 +127,25 @@ The attributes coming with an 'repo-app' element are passed down to the respecti
 
             connectedCallback() {
                 super.connectedCallback();
-                console.log('RepoApp connected');
+//                console.log('RepoApp connected');
             }
 
             _isLauncher() {
-                return 'launcher' == document.getElementById('meta').byKey('env')
+//                console.log('RepoApp connected parent ', this.parentNode.parentNode);
+                if(this.parentNode.parentNode.getAttribute('type') == 'launcher') {
+                    return true;
+                }else{
+                    return false;
+                }
             }
 
             _isPackageManager() {
-                return 'packagemanager' == document.getElementById('meta').byKey('env')
+//                console.log('RepoApp connected parent ', this.parentNode.parentNode);
+                if(this.parentNode.parentNode.getAttribute('type') == 'packagemanager') {
+                    return true;
+                }else{
+                    return false;
+                }
             }
 
         }
