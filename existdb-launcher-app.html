@@ -25,7 +25,8 @@
 
 
             app-header {
-                background: rgb(0, 136, 204);
+                /*background: rgb(0, 136, 204);*/
+                background: var(--paper-blue-500);
                 padding: 0px;
                 color: white;
                 height: 60px;
@@ -49,13 +50,28 @@
                             background: ghostwhite;
                         }
             */
+            @media only screen and (max-width: 768px) {
+                [main-title]{
+                    font-size:18px;
+                }
+                .x{
+                    display:none;
+                }
+                app-toolbar{
+                    padding-right:0;
+                }
+
+            }
 
         </style>
         <app-header-layout id="outer" fullbleed has-scrolling-region>
             <app-header slot="header" fixed>
                 <app-toolbar>
-                    <img src="{{baseUrl}}/resources/icon.svg" style="width:36px;height:36px;padding-right:6px;">
+                    <img class="x" src="{{importPath}}resources/icon.svg" style="width:36px;height:36px;margin-right:10px;">
+                    <slot name="toggleIcon"></slot>
+                    <!--<img src="{{baseUrl}}/resources/icon.svg" style="width:36px;height:36px;padding-right:6px;">-->
                     <div main-title>Launcher</div>
+                    <a id="login" href="admin">login</a>
                 </app-toolbar>
             </app-header>
             <existdb-launcher path="[[path]]" ignores='{{ignores}}'></existdb-launcher>
@@ -90,6 +106,11 @@
                     baseUrl: {
                         type:String,
                         reflectToAttribute:true
+                    },
+                    showLogin:{
+                        type:Boolean,
+                        value:false,
+                        reflectToAttribute:true
                     }
                 };
             }
@@ -100,7 +121,9 @@
                 this.baseUrl = this.importPath;
 //                console.log('ExistdbLauncherApp connected rootPath', this.baseUrl);
 //                console.log('ExistdbLauncherApp connected importPath', this.importPath);
-
+                console.log("showLogin ", this.showLogin)
+                this.$.login.hidden = !this.showLogin;
+                this.$.outer.resetLayout();
             }
 
             ready(){
