@@ -5,9 +5,10 @@
                 display: block;
                 position:relative;
                 background:ghostwhite;
-                text-align: center;
+                /*text-align: center;*/
             }
 
+/*
             :focus{
                 box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
                 0 1px 5px 0 rgba(0, 0, 0, 0.12),
@@ -15,6 +16,7 @@
                 border:none;
                 outline:0;
             }
+*/
 
             [launcher] repo-packages{
                 display:flex;
@@ -71,18 +73,29 @@
                 display:none;
             }
 
+            [hidden]{
+                display: none;
+            }
+/*
+            .apps{
+                padding-left:100px;
+                display: inline-block;
+            }
+*/
         </style>
         <iron-ajax id="loadApplications"
                    method="get"
                    handle-as="text"
                    on-response="_displayApplications"
                    url="[[basePath]]/packageservice/packages/apps"
-                   on-error="_handleError" auto>
+                   on-error="_handleError">
         </iron-ajax>
 
 
-        <div id="apps" launcher type="launcher">
-            <slot></slot>
+
+        <div id="apps" class="apps" launcher type="launcher">
+            <div id="logo"></div>
+            <slot id="slot"></slot>
         </div>
 
     </template>
@@ -148,7 +161,16 @@
 
 
             _displayApplications(e){
+                console.log('_displayApplications ', e);
                 this.$.apps.innerHTML = this.$.loadApplications.lastResponse;
+
+                // show branding unless we're embedded in dashboard
+                if(!this._isEmbedded()){
+                    var branding = document.createElement('existdb-branding');
+                    var packageRoot = this.$.apps.querySelector('repo-packages');
+                    packageRoot.insertBefore(branding, packageRoot.querySelector('repo-app'));
+                }
+
                 var apps = this.shadowRoot.querySelectorAll('repo-app');
 //                console.log("apps: ", apps);
 //                console.log("ignores: ", this.ignores);
@@ -161,7 +183,6 @@
 
                     if(this.ignores != undefined && this.ignores.indexOf(abbrev) != -1){
 //                        console.log('ignoring ', abbrev);
-
                         apps[i].style.display='none';
                     }
                 }
@@ -183,6 +204,10 @@
 
             _handleError(){
 
+            }
+
+            _isEmbedded(){
+                return document.querySelector('existdb-dashboard') != null;
             }
 
 
