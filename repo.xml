@@ -11,6 +11,12 @@
     <prepare></prepare>
     <finish/>
     <changelog>
+        <change version="1.2.1">
+            <ul xmls="http://www.w3.org/1999/xhtml">
+                <li>cleanup</li>
+                <li>supporting output of eXist-db version number</li>
+            </ul>
+        </change>
         <change version="1.2.0">
             <ul xmls="http://www.w3.org/1999/xhtml">
                 <li>displaying eXist-db logo and version on launchpad</li>

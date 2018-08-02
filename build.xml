@@ -31,7 +31,7 @@
      in your own projects.
     -->
     <target name="polymer-build-production" depends="clean-polymer-build">
-        <exec executable="polymer">
+        <exec executable="polymer" dir="${basedir}">
             <arg value="build"/>
             <arg value="--bundle"/>
             <arg value="--sources"/>
