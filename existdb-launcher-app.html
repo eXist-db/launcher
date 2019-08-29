@@ -64,7 +64,7 @@
                     <slot name="toggleIcon"></slot>
                     <!--<img src="{{baseUrl}}/resources/icon.svg" style="width:36px;height:36px;padding-right:6px;">-->
                     <div main-title>Launcher</div>
-                    <a id="login" href="admin">login</a>
+                    <existdb-login id="login" login-label="Login" logout-label="Logout" group="dba" login-url="index.html" logout-url="index.html"></existdb-login>
                 </app-toolbar>
             </app-header>
             <existdb-launcher path="[[path]]" ignores='{{ignores}}'></existdb-launcher>
