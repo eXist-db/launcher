@@ -64,7 +64,7 @@
                     <slot name="toggleIcon"></slot>
                     <!--<img src="{{baseUrl}}/resources/icon.svg" style="width:36px;height:36px;padding-right:6px;">-->
                     <div main-title>Launcher</div>
-                    <existdb-login id="login" login-label="Login" logout-label="Logout" group="dba" login-url="index.html" logout-url="index.html"></existdb-login>
+                    <slot></slot>
                 </app-toolbar>
             </app-header>
             <existdb-launcher path="[[path]]" ignores='{{ignores}}'></existdb-launcher>
@@ -99,11 +99,6 @@
                     baseUrl: {
                         type:String,
                         reflectToAttribute:true
-                    },
-                    showLogin:{
-                        type:Boolean,
-                        value:false,
-                        reflectToAttribute:true
                     }
                 };
             }
@@ -114,8 +109,6 @@
                 this.baseUrl = this.importPath;
 //                console.log('ExistdbLauncherApp connected rootPath', this.baseUrl);
 //                console.log('ExistdbLauncherApp connected importPath', this.importPath);
-                console.log("showLogin ", this.showLogin)
-                this.$.login.hidden = !this.showLogin;
                 this.$.outer.resetLayout();
             }
 
