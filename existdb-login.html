@@ -39,10 +39,16 @@
 
         <a href="#" on-click="_show" title="[[user]]">
             <template is="dom-if" if="[[loggedIn]]">
-                <iron-icon icon="[[logoutIcon]]"></iron-icon> <span class="label">[[logoutLabel]] [[user]]</span>
+                <template is="dom-if" if="[[logoutIcon]]">
+                <iron-icon icon="[[logoutIcon]]"></iron-icon>
+                </template>
+                <span class="label">[[logoutLabel]] [[user]]</span>
             </template>
             <template is="dom-if" if="[[!loggedIn]]">
-                <iron-icon icon="[[loginIcon]]"></iron-icon> <span class="label">[[loginLabel]]</span>
+                <template is="dom-if" if="[[loginIcon]]">
+                <iron-icon icon="[[loginIcon]]"></iron-icon>
+                </template>
+                <span class="label">[[loginLabel]]</span>
             </template>
         </a>
 
