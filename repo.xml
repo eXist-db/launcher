@@ -12,51 +12,51 @@
     <finish/>
     <changelog>
         <change version="1.2.1">
-            <ul xmls="http://www.w3.org/1999/xhtml">
+            <ul xmlns="http://www.w3.org/1999/xhtml">
                 <li>cleanup</li>
                 <li>supporting output of eXist-db version number</li>
             </ul>
         </change>
         <change version="1.2.0">
-            <ul xmls="http://www.w3.org/1999/xhtml">
+            <ul xmlns="http://www.w3.org/1999/xhtml">
                 <li>displaying eXist-db logo and version on launchpad</li>
                 <li>updated repo-elements</li>
             </ul>
         </change>
         <change version="1.1.3">
-            <ul xmls="http://www.w3.org/1999/xhtml">
+            <ul xmlns="http://www.w3.org/1999/xhtml">
                 <li>pointer for app icons</li>
                 <li>cleanup</li>
             </ul>
         </change>
         <change version="1.1.2">
-            <ul xmls="http://www.w3.org/1999/xhtml">
+            <ul xmlns="http://www.w3.org/1999/xhtml">
                 <li>added ignores</li>
                 <li>small styling fixes</li>
             </ul>
         </change>
         <change version="1.1.1">
-            <ul xmls="http://www.w3.org/1999/xhtml">
+            <ul xmlns="http://www.w3.org/1999/xhtml">
                 <li>removed iron meta</li>
             </ul>
         </change>
         <change version="1.1.0">
-            <ul xmls="http://www.w3.org/1999/xhtml">
+            <ul xmlns="http://www.w3.org/1999/xhtml">
                 <li>adapted to new repo-elements 2.0.0</li>
             </ul>
         </change>
         <change version="1.0.2">
-            <ul xmls="http://www.w3.org/1999/xhtml">
+            <ul xmlns="http://www.w3.org/1999/xhtml">
                 <li>fixed importPath for icon on header</li>
             </ul>
         </change>
         <change version="1.0.1">
-            <ul xmls="http://www.w3.org/1999/xhtml">
+            <ul xmlns="http://www.w3.org/1999/xhtml">
                 <li>fixed dependencies</li>
             </ul>
         </change>
         <change version="1.0.0">
-            <ul xmls="http://www.w3.org/1999/xhtml">
+            <ul xmlns="http://www.w3.org/1999/xhtml">
                 <li>allows to start apps from the browser</li>
                 <li>works as standalone app or embedded in dashboard as component</li>
             </ul>
