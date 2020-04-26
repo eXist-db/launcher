@@ -1,6 +1,6 @@
 {
   "name": "launcher",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "existdb-launcher",
   "main": "index.js",
   "scripts": {
